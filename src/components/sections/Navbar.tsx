@@ -42,7 +42,7 @@ export function Navbar() {
 
   // Track active section via IntersectionObserver
   useEffect(() => {
-    const sectionIds = ["home", "about", "solutions", "projects", "faq"];
+    const sectionIds = ["home", "about", "solutions", "projects", "faq", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

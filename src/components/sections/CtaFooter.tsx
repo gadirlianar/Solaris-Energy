@@ -75,7 +75,7 @@ export function CtaFooter() {
   };
 
   return (
-    <footer id="contact" className="w-full max-w-[1288px] mx-auto px-4 sm:px-6 md:px-9 pt-0 pb-[21px] relative">
+    <footer id="footer" className="w-full max-w-[1288px] mx-auto px-4 sm:px-6 md:px-9 pt-0 pb-[21px] relative">
       {/* Outer Gray Panel */}
       <div className="w-full bg-[#F2F2F2] rounded-[32px] p-2.5 flex flex-col gap-2.5">
         {/* Card 1: CTA Banner + Solar Field Photo + 3-Column Footer */}

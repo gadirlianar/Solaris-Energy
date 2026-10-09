@@ -417,3 +417,32 @@ export const CTA_FOOTER_CONTENT = {
   contactPhone: "+1 (994) 717-1255",
   contactAddress: "4020 University Dr, Fairfax, VA, USA",
 };
+
+export const CONTACT_CONTENT = {
+  eyebrow: "Contact us",
+  titleLine1: "Let's Talk About",
+  titleLine2: "Your Solar Needs",
+  subtitle:
+    "Contact us for consultations, inquiries, or support — our team is here to guide you every step of the way.",
+  location: {
+    name: "Solaris Energy HQ",
+    address: "4020 University Dr, Fairfax, VA 22030",
+    phone: "+1 (994) 717-1255",
+    email: "projects@solaris.com",
+    rating: "4.9",
+    reviewsCount: "54",
+    mapUrl: "https://maps.google.com/?q=4020+University+Dr,+Fairfax,+VA+22030",
+    embedUrl:
+      "https://maps.google.com/maps?q=4020+University+Dr,+Fairfax,+VA+22030&t=&z=14&ie=UTF8&iwloc=&output=embed",
+  },
+  form: {
+    services: [
+      "Residential Solar Installation",
+      "Commercial Solar Systems",
+      "Battery Storage & Backup",
+      "System Maintenance & Inspection",
+      "Free Energy Audit & Consultation",
+    ],
+  },
+};
+

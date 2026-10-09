@@ -8,6 +8,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Benefits } from "@/components/sections/Benefits";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Faq } from "@/components/sections/Faq";
+import { Contact } from "@/components/sections/Contact";
 import { CtaFooter } from "@/components/sections/CtaFooter";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
@@ -56,6 +57,9 @@ export default function HomePage() {
 
           {/* 05 FAQ */}
           <Faq />
+
+          {/* 10 Contact & Location */}
+          <Contact />
         </main>
 
         {/* 04 CTA + Footer */}

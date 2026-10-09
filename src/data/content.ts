@@ -9,6 +9,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Solution", href: "#solutions" },
   { label: "Projects", href: "#projects" },
   { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const HERO_CONTENT = {

@@ -12,7 +12,6 @@ import { Contact } from "@/components/sections/Contact";
 import { CtaFooter } from "@/components/sections/CtaFooter";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
-import { Cursor } from "@/components/motion/Cursor";
 import { IntroOverlay } from "@/components/motion/IntroOverlay";
 import { MotionDebug } from "@/components/motion/MotionDebug";
 
@@ -25,9 +24,6 @@ export default function HomePage() {
 
         {/* Top 2px Lime Scroll Progress Bar */}
         <ScrollProgress />
-
-        {/* Custom Desktop Interactive Cursor */}
-        <Cursor />
 
         {/* Fixed/Sticky Glass Navbar */}
         <Navbar />

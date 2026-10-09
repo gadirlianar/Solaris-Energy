@@ -91,7 +91,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="az" className={`${hostGrotesk.variable} scroll-smooth`}>
+    <html lang="en" className={`${hostGrotesk.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"

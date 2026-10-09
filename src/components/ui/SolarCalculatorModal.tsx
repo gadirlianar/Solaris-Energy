@@ -11,16 +11,21 @@ interface SolarCalculatorModalProps {
 
 export function SolarCalculatorModal({ isOpen, onClose }: SolarCalculatorModalProps) {
   const { language, t } = useLanguage();
-  const isAz = language === "az";
 
-  // Bill slider state: AZN (30 to 500), RUB (1500 to 30000)
-  const [bill, setBill] = useState(isAz ? 120 : 7500);
+  const getInitialBill = (lang: string) => {
+    if (lang === "az") return 120;
+    if (lang === "ru") return 7500;
+    return 180; // en (USD)
+  };
+
+  const [bill, setBill] = useState(getInitialBill(language));
 
   // Sync bill scale if language flips while open
   useEffect(() => {
-    if (isAz && bill > 500) setBill(120);
-    if (!isAz && bill < 600) setBill(7500);
-  }, [isAz, bill]);
+    if (language === "az" && bill > 500) setBill(120);
+    else if (language === "ru" && bill < 600) setBill(7500);
+    else if (language === "en" && (bill > 1000 || bill < 30)) setBill(180);
+  }, [language, bill]);
 
   // Handle ESC key to close
   useEffect(() => {
@@ -39,10 +44,10 @@ export function SolarCalculatorModal({ isOpen, onClose }: SolarCalculatorModalPr
 
   if (!isOpen) return null;
 
-  const minBill = isAz ? 30 : 1500;
-  const maxBill = isAz ? 500 : 30000;
-  const step = isAz ? 10 : 500;
-  const currencySymbol = isAz ? "AZN" : "₽";
+  const minBill = language === "az" ? 30 : language === "ru" ? 1500 : 40;
+  const maxBill = language === "az" ? 500 : language === "ru" ? 30000 : 700;
+  const step = language === "az" ? 10 : language === "ru" ? 500 : 10;
+  const currencySymbol = language === "az" ? "AZN" : language === "ru" ? "₽" : "$";
 
   // Calculations:
   // Solar saves ~70% on average
@@ -51,8 +56,9 @@ export function SolarCalculatorModal({ isOpen, onClose }: SolarCalculatorModalPr
   const twentyFiveYearSavings = yearlySavings * 25;
 
   // Approx kW needed: 1 kW produces ~120-140 kWh/month.
-  // Assuming tariff ~0.10 AZN/kWh or ~6 RUB/kWh
-  const estimatedKwh = isAz ? bill / 0.10 : bill / 6.0;
+  // Assuming tariff ~0.10 AZN/kWh, ~6 RUB/kWh, or ~$0.16/kWh
+  const estimatedKwh =
+    language === "az" ? bill / 0.10 : language === "ru" ? bill / 6.0 : bill / 0.16;
   const systemKw = Math.max(3.2, Math.round((estimatedKwh / 130) * 10) / 10);
   const co2Tons = Math.round(systemKw * 1.35 * 10) / 10;
 

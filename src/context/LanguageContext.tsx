@@ -1,11 +1,12 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+import enTranslations from "@/locales/en.json";
 import azTranslations from "@/locales/az.json";
 import ruTranslations from "@/locales/ru.json";
 
-export type Language = "az" | "ru";
-export type Translations = typeof azTranslations;
+export type Language = "en" | "az" | "ru";
+export type Translations = typeof enTranslations;
 
 interface LanguageContextType {
   language: Language;
@@ -15,33 +16,34 @@ interface LanguageContextType {
 }
 
 const translationsMap: Record<Language, Translations> = {
-  az: azTranslations,
-  ru: ruTranslations as Translations,
+  en: enTranslations,
+  az: azTranslations as unknown as Translations,
+  ru: ruTranslations as unknown as Translations,
 };
 
 const LanguageContext = createContext<LanguageContextType>({
-  language: "az",
+  language: "en",
   setLanguage: () => {},
-  t: azTranslations,
+  t: enTranslations,
   isHydrated: false,
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("az");
+  const [language, setLanguageState] = useState<Language>("en");
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
     try {
       const savedLang = localStorage.getItem("solaris_lang") as Language | null;
-      if (savedLang === "az" || savedLang === "ru") {
+      if (savedLang === "en" || savedLang === "az" || savedLang === "ru") {
         setLanguageState(savedLang);
         document.documentElement.lang = savedLang;
       } else {
-        document.documentElement.lang = "az";
+        document.documentElement.lang = "en";
       }
     } catch {
       // Graceful fallback for restricted environments
-      document.documentElement.lang = "az";
+      document.documentElement.lang = "en";
     }
     setIsHydrated(true);
   }, []);
@@ -58,7 +60,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const t = translationsMap[language] || azTranslations;
+  const t = translationsMap[language] || enTranslations;
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, isHydrated }}>
@@ -68,9 +70,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useLanguage() {
-  return useContext(LanguageContext);
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error("useLanguage must be used within a LanguageProvider");
+  }
+  return context;
 }
 
-export function useTranslation() {
-  return useContext(LanguageContext);
-}
+export const useTranslation = useLanguage;

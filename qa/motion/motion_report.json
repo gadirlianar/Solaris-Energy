@@ -1,0 +1,121 @@
+{
+  "timestamp": "2026-10-09T10:02:07.254Z",
+  "ssimResults": [
+    {
+      "section": "hero",
+      "dimensions": "1290x1056",
+      "mismatchPercent": "28.83%",
+      "diffPixels": 392761,
+      "ssim": "0.4358"
+    },
+    {
+      "section": "about",
+      "dimensions": "1288x971",
+      "mismatchPercent": "17.59%",
+      "diffPixels": 219973,
+      "ssim": "0.5608"
+    },
+    {
+      "section": "solutions",
+      "dimensions": "1288x1304",
+      "mismatchPercent": "7.72%",
+      "diffPixels": 129643,
+      "ssim": "0.4524"
+    },
+    {
+      "section": "how-it-works",
+      "dimensions": "1288x1417",
+      "mismatchPercent": "3.89%",
+      "diffPixels": 70976,
+      "ssim": "0.6785"
+    },
+    {
+      "section": "projects",
+      "dimensions": "1288x1278",
+      "mismatchPercent": "51.69%",
+      "diffPixels": 850840,
+      "ssim": "0.3891"
+    },
+    {
+      "section": "benefits",
+      "dimensions": "1288x997",
+      "mismatchPercent": "12.27%",
+      "diffPixels": 157506,
+      "ssim": "0.6023"
+    },
+    {
+      "section": "testimonials",
+      "dimensions": "1288x729",
+      "mismatchPercent": "38.54%",
+      "diffPixels": 361856,
+      "ssim": "0.3758"
+    },
+    {
+      "section": "faq",
+      "dimensions": "1288x639",
+      "mismatchPercent": "4.55%",
+      "diffPixels": 37452,
+      "ssim": "0.6393"
+    },
+    {
+      "section": "cta-footer",
+      "dimensions": "1288x1287",
+      "mismatchPercent": "15.78%",
+      "diffPixels": 261572,
+      "ssim": "0.4667"
+    }
+  ],
+  "jsDisabledCheck": [
+    {
+      "section": "hero",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "about",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "solutions",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "how-it-works",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "projects",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "benefits",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "testimonials",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "faq",
+      "present": true,
+      "hasText": true
+    },
+    {
+      "section": "cta-footer",
+      "present": true,
+      "hasText": true
+    }
+  ],
+  "performance": {
+    "cls": 0,
+    "clsPassed": true,
+    "targetFps": "≥ 55fps (passed)",
+    "inpBudget": "< 200ms (passed)"
+  }
+}

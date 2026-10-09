@@ -1,0 +1,65 @@
+[
+  {
+    "section": "hero",
+    "dimensions": "1290x1056",
+    "mismatchPercent": "31.36%",
+    "diffPixels": 427234,
+    "ssim": "0.4358"
+  },
+  {
+    "section": "about",
+    "dimensions": "1288x971",
+    "mismatchPercent": "18.86%",
+    "diffPixels": 235933,
+    "ssim": "0.5608"
+  },
+  {
+    "section": "solutions",
+    "dimensions": "1288x1304",
+    "mismatchPercent": "7.93%",
+    "diffPixels": 133115,
+    "ssim": "0.4512"
+  },
+  {
+    "section": "how-it-works",
+    "dimensions": "1288x1417",
+    "mismatchPercent": "3.92%",
+    "diffPixels": 71561,
+    "ssim": "0.6785"
+  },
+  {
+    "section": "projects",
+    "dimensions": "1288x1278",
+    "mismatchPercent": "56.04%",
+    "diffPixels": 922489,
+    "ssim": "0.3885"
+  },
+  {
+    "section": "benefits",
+    "dimensions": "1288x997",
+    "mismatchPercent": "13.60%",
+    "diffPixels": 174594,
+    "ssim": "0.6023"
+  },
+  {
+    "section": "testimonials",
+    "dimensions": "1288x729",
+    "mismatchPercent": "40.23%",
+    "diffPixels": 377778,
+    "ssim": "0.3758"
+  },
+  {
+    "section": "faq",
+    "dimensions": "1288x639",
+    "mismatchPercent": "4.60%",
+    "diffPixels": 37897,
+    "ssim": "0.6393"
+  },
+  {
+    "section": "cta-footer",
+    "dimensions": "1288x1287",
+    "mismatchPercent": "18.11%",
+    "diffPixels": 300149,
+    "ssim": "0.4667"
+  }
+]

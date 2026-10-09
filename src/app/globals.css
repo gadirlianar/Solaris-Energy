@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #ffffff;
+    --ink-primary: #111111;
+    --ink-secondary: #555555;
+    --ink-muted: #666666;
+    --accent-lime: #e4f86e;
+    --panel-gray: #f2f2f2;
+    --card-white: #ffffff;
+    --icon-gray: #ececec;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--ink-primary);
+    background-color: var(--bg-page);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #e4f86e;
+    color: #111111;
+  }
+}
+
+/* Custom 3D perspective & carousel helpers */
+.perspective-container {
+  perspective: 1200px;
+  perspective-origin: center center;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Film grain SVG noise overlay */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+/* Hide scrollbar for clean carousel interactions */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reliable CSS hero entrance animations */
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroHouseEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-badge {
+  animation: heroEntrance 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+.animate-hero-h1 {
+  animation: heroEntrance 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.animate-hero-sub {
+  animation: heroEntrance 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+.animate-hero-cta {
+  animation: heroEntrance 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.animate-hero-house {
+  animation: heroHouseEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-badge,
+  .animate-hero-h1,
+  .animate-hero-sub,
+  .animate-hero-cta,
+  .animate-hero-house {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+

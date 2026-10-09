@@ -13,4 +13,5 @@ export * from "./ScrollProgress";
 export * from "./Cursor";
 export * from "./SmoothScroll";
 export * from "./IntroOverlay";
+export * from "./BigBossGreeting";
 export * from "./MotionDebug";

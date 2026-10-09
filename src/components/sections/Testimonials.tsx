@@ -4,17 +4,19 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { TESTIMONIALS_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 
 export function Testimonials() {
+  const { t } = useTranslation();
+  const testimonials = t.testimonials;
   const [activeIndex, setActiveIndex] = useState(2); // Start with Anar Gadirli (center)
   const [isHovered, setIsHovered] = useState(false);
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50, opacity: 0 });
   const reduced = useReducedMotion();
-  const items = TESTIMONIALS_CONTENT.testimonials;
+  const items = testimonials.testimonials;
 
   // Drag interaction state
   const dragStartX = useRef<number | null>(null);
@@ -134,7 +136,7 @@ export function Testimonials() {
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-10 md:mb-12">
         <Reveal direction="left" distance={16} duration={400}>
-          <Eyebrow>{TESTIMONIALS_CONTENT.eyebrow}</Eyebrow>
+          <Eyebrow>{testimonials.eyebrow}</Eyebrow>
         </Reveal>
 
         <SplitReveal
@@ -142,13 +144,13 @@ export function Testimonials() {
           delay={0.1}
           className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111] mt-3.5 mb-4"
         >
-          <span>{TESTIMONIALS_CONTENT.titleLine1}</span>
-          <span>{TESTIMONIALS_CONTENT.titleLine2}</span>
+          <span>{testimonials.titleLine1}</span>
+          <span>{testimonials.titleLine2}</span>
         </SplitReveal>
 
         <Reveal direction="up" delay={0.2} distance={20} duration={600}>
           <p className="text-[16px] sm:text-[17px] leading-[1.5] text-[#555555]">
-            {TESTIMONIALS_CONTENT.subtitle}
+            {testimonials.subtitle}
           </p>
         </Reveal>
       </div>

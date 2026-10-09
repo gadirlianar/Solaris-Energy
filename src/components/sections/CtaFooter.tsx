@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { CurrentYear } from "@/components/ui/CurrentYear";
-import { CTA_FOOTER_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { Magnetic } from "@/components/motion/Magnetic";
@@ -39,6 +39,8 @@ function SocialIcon({ icon }: { icon: string }) {
 }
 
 export function CtaFooter() {
+  const { t } = useTranslation();
+  const ctaFooter = t.ctaFooter;
   const [photoRef, photoInView] = useInView<HTMLDivElement>({ once: true, margin: "-40px" });
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [parallaxOffset, setParallaxOffset] = useState(0);
@@ -95,13 +97,13 @@ export function CtaFooter() {
               delay={0.1}
               className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111]"
             >
-              <span>{CTA_FOOTER_CONTENT.h2Line1}</span>
-              <span>{CTA_FOOTER_CONTENT.h2Line2}</span>
+              <span>{ctaFooter.h2Line1}</span>
+              <span>{ctaFooter.h2Line2}</span>
             </SplitReveal>
 
             <Reveal direction="up" delay={0.2} distance={20} duration={600}>
               <p className="mt-5 text-[16px] sm:text-[17px] leading-[1.55] text-[#555555] max-w-[620px]">
-                {CTA_FOOTER_CONTENT.subtitle}
+                {ctaFooter.subtitle}
               </p>
             </Reveal>
 
@@ -109,7 +111,7 @@ export function CtaFooter() {
               <div className="mt-8 mb-10">
                 <Magnetic maxPull={8}>
                   <Button href="#contact" variant="primary">
-                    {CTA_FOOTER_CONTENT.ctaButton}
+                    {ctaFooter.ctaButton}
                   </Button>
                 </Magnetic>
               </div>
@@ -126,7 +128,7 @@ export function CtaFooter() {
             }}
           >
             <Image
-              src={CTA_FOOTER_CONTENT.solarFieldImage}
+              src={ctaFooter.solarFieldImage}
               alt="Expansive ground-mounted solar panels"
               fill
               sizes="(max-width: 1288px) 100vw, 1200px"
@@ -146,12 +148,12 @@ export function CtaFooter() {
               <Logo />
 
               <p className="mt-4 text-[15px] leading-relaxed text-[#555555] max-w-[340px]">
-                {CTA_FOOTER_CONTENT.brandDescription}
+                {ctaFooter.brandDescription}
               </p>
 
               {/* Social icons with micro lift/pop */}
               <div className="flex items-center gap-2.5 mt-6">
-                {CTA_FOOTER_CONTENT.socials.map((social) => (
+                {ctaFooter.socials.map((social) => (
                   <Link
                     key={social.name}
                     href={social.href}
@@ -167,11 +169,11 @@ export function CtaFooter() {
             {/* Column 2: Quick Links with sliding underline */}
             <div className="md:col-span-3 flex flex-col items-start md:pl-6">
               <h3 className="text-[17px] font-semibold text-[#111111] tracking-tight mb-4">
-                {CTA_FOOTER_CONTENT.quickLinksTitle}
+                {ctaFooter.quickLinksTitle}
               </h3>
 
               <ul className="flex flex-col gap-3">
-                {CTA_FOOTER_CONTENT.quickLinks.map((link) => (
+                {ctaFooter.quickLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
@@ -188,7 +190,7 @@ export function CtaFooter() {
             {/* Column 3: Contact Us */}
             <div className="md:col-span-4 flex flex-col items-start">
               <h3 className="text-[17px] font-semibold text-[#111111] tracking-tight mb-4">
-                {CTA_FOOTER_CONTENT.contactTitle}
+                {ctaFooter.contactTitle}
               </h3>
 
               <div className="flex flex-col gap-3.5">
@@ -198,10 +200,10 @@ export function CtaFooter() {
                     <Mail className="w-4 h-4 text-[#111111]" />
                   </div>
                   <a
-                    href={`mailto:${CTA_FOOTER_CONTENT.contactEmail}`}
+                    href={`mailto:${ctaFooter.contactEmail}`}
                     className="text-[15.5px] text-[#555555] hover:text-[#111111] transition-colors"
                   >
-                    {CTA_FOOTER_CONTENT.contactEmail}
+                    {ctaFooter.contactEmail}
                   </a>
                 </div>
 
@@ -211,10 +213,10 @@ export function CtaFooter() {
                     <Phone className="w-4 h-4 text-[#111111]" />
                   </div>
                   <a
-                    href={`tel:${CTA_FOOTER_CONTENT.contactPhone.replace(/[^0-9+]/g, "")}`}
+                    href={`tel:${ctaFooter.contactPhone.replace(/[^0-9+]/g, "")}`}
                     className="text-[15.5px] text-[#555555] hover:text-[#111111] transition-colors"
                   >
-                    {CTA_FOOTER_CONTENT.contactPhone}
+                    {ctaFooter.contactPhone}
                   </a>
                 </div>
 
@@ -224,7 +226,7 @@ export function CtaFooter() {
                     <MapPin className="w-4 h-4 text-[#111111]" />
                   </div>
                   <span className="text-[15.5px] text-[#555555] leading-snug">
-                    {CTA_FOOTER_CONTENT.contactAddress}
+                    {ctaFooter.contactAddress}
                   </span>
                 </div>
               </div>
@@ -236,7 +238,7 @@ export function CtaFooter() {
         <Reveal direction="fade" delay={0.4} duration={600}>
           <div className="bg-white rounded-[20px] py-5 px-6 text-center">
             <p className="text-[14px] sm:text-[15px] text-[#666666]">
-              &copy; <CurrentYear /> Solaris Energy. All rights reserved.
+              &copy; <CurrentYear /> Solaris Energy. {ctaFooter.rightsReserved}
             </p>
           </div>
         </Reveal>
@@ -249,7 +251,7 @@ export function CtaFooter() {
         className={`fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-[#E4F86E] text-[#111111] flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black cursor-pointer ${
           showBackToTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"
         }`}
-        aria-label="Back to top"
+        aria-label={ctaFooter.backToTop}
       >
         <ArrowUp className="w-5 h-5 stroke-[2.2]" />
       </button>

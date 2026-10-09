@@ -63,6 +63,7 @@ export const metadata: Metadata = {
 };
 
 import { ScrollManager } from "@/components/ui/ScrollManager";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -90,7 +91,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${hostGrotesk.variable} scroll-smooth`}>
+    <html lang="az" className={`${hostGrotesk.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
@@ -98,8 +99,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-[family-name:var(--font-host-grotesk)] text-[#111111] bg-white antialiased selection:bg-[#E4F86E] selection:text-[#111111] overflow-x-hidden">
-        <ScrollManager />
-        {children}
+        <LanguageProvider>
+          <ScrollManager />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -14,7 +14,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { BENEFITS_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { useInView } from "@/components/motion/useInView";
@@ -39,11 +39,13 @@ function BenefitIcon({ icon }: { icon: string }) {
 }
 
 export function Benefits() {
+  const { t } = useTranslation();
+  const benefits = t.benefits;
   const [sectionRef, inView] = useInView<HTMLDivElement>({ once: true, margin: "-40px" });
   const reduced = useReducedMotion();
 
   // First item open by default
-  const [openId, setOpenId] = useState<string>(BENEFITS_CONTENT.items[0].id);
+  const [openId, setOpenId] = useState<string>(benefits.items[0].id);
   const [activePhotoScale, setActivePhotoScale] = useState(false);
 
   // Auto-open first item 600ms after entering view if closed
@@ -51,11 +53,11 @@ export function Benefits() {
     if (reduced || !inView) return;
     const timer = setTimeout(() => {
       if (!openId) {
-        setOpenId(BENEFITS_CONTENT.items[0].id);
+        setOpenId(benefits.items[0].id);
       }
     }, 600);
     return () => clearTimeout(timer);
-  }, [inView, openId, reduced]);
+  }, [inView, openId, reduced, benefits.items]);
 
   const toggleItem = (id: string) => {
     setOpenId((prev) => (prev === id ? "" : id));
@@ -72,7 +74,7 @@ export function Benefits() {
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-12 md:mb-16">
         <Reveal direction="left" distance={16} duration={400}>
-          <Eyebrow>{BENEFITS_CONTENT.eyebrow}</Eyebrow>
+          <Eyebrow>{benefits.eyebrow}</Eyebrow>
         </Reveal>
 
         <SplitReveal
@@ -80,13 +82,13 @@ export function Benefits() {
           delay={0.1}
           className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111] mt-3.5 mb-4"
         >
-          <span>{BENEFITS_CONTENT.titleLine1}</span>
-          <span>{BENEFITS_CONTENT.titleLine2}</span>
+          <span>{benefits.titleLine1}</span>
+          <span>{benefits.titleLine2}</span>
         </SplitReveal>
 
         <Reveal direction="up" delay={0.2} distance={20} duration={600}>
           <p className="text-[16px] sm:text-[17px] leading-[1.5] text-[#555555]">
-            {BENEFITS_CONTENT.subtitle}
+            {benefits.subtitle}
           </p>
         </Reveal>
       </div>
@@ -96,7 +98,7 @@ export function Benefits() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-2.5 items-stretch">
           {/* Left: 6 Accordion Rows with Stagger */}
           <div className="lg:col-span-6 flex flex-col gap-2.5">
-            {BENEFITS_CONTENT.items.map((item, idx) => {
+            {benefits.items.map((item, idx) => {
               const isOpen = openId === item.id;
               return (
                 <Reveal
@@ -164,7 +166,7 @@ export function Benefits() {
           {/* Right: Large Photo of Woman on Rooftop with subtle zoom/pan & corner highlight sweep */}
           <div className="lg:col-span-6 relative min-h-[460px] lg:min-h-full rounded-[16px] overflow-hidden shadow-sm bg-neutral-900 group">
             <Image
-              src={BENEFITS_CONTENT.image}
+              src="/images/benefits-woman-hd.jpg"
               alt="Woman holding tablet on rooftop with solar panels"
               fill
               sizes="(max-width: 1024px) 100vw, 592px"

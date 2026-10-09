@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
-import { ABOUT_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { CountUp } from "@/components/motion/CountUp";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
@@ -79,10 +79,12 @@ function StatCard({
 }
 
 export function About() {
+  const { t } = useTranslation();
+  const about = t.about;
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const reduced = useReducedMotion();
-  const slides = ABOUT_CONTENT.slides;
+  const slides = about.slides;
 
   // Auto-play timer (5s)
   useEffect(() => {
@@ -111,7 +113,7 @@ export function About() {
         {/* Left Column */}
         <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-6">
           <Reveal direction="left" distance={16} duration={400}>
-            <Eyebrow>{ABOUT_CONTENT.eyebrow}</Eyebrow>
+            <Eyebrow>{about.eyebrow}</Eyebrow>
           </Reveal>
 
           <SplitReveal
@@ -119,21 +121,21 @@ export function About() {
             delay={0.1}
             className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111] mt-3.5 mb-5"
           >
-            <span>{ABOUT_CONTENT.titleLine1}</span>
-            <span>{ABOUT_CONTENT.titleLine2}</span>
+            <span>{about.titleLine1}</span>
+            <span>{about.titleLine2}</span>
           </SplitReveal>
 
           {/* Paragraph wrapped to exactly 2 lines */}
           <Reveal direction="up" delay={0.2} distance={20} duration={600}>
             <p className="text-[16px] sm:text-[17px] leading-[1.55] text-[#666666] max-w-[540px] mb-8">
-              {ABOUT_CONTENT.paragraph}
+              {about.paragraph}
             </p>
           </Reveal>
 
           <Reveal direction="up" delay={0.3} distance={16} duration={500}>
             <Magnetic maxPull={8}>
               <Button href="#solutions" variant="dark-gray">
-                {ABOUT_CONTENT.buttonText}
+                {about.buttonText}
               </Button>
             </Magnetic>
           </Reveal>
@@ -238,7 +240,7 @@ export function About() {
       {/* Bottom Gray Panel with 3 Stat Cards */}
       <div className="w-full bg-[#F2F2F2] rounded-[28px] p-[11px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[11px]">
-          {ABOUT_CONTENT.stats.map((stat, idx) => (
+          {about.stats.map((stat, idx) => (
             <StatCard
               key={stat.label}
               {...stat}

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/Button";
-import { HERO_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { HeroAtmosphere } from "@/components/motion/HeroAtmosphere";
 import { HeroHouseMotion } from "@/components/motion/HeroHouseMotion";
 import { Magnetic } from "@/components/motion/Magnetic";
@@ -10,6 +10,8 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 
 export function Hero() {
+  const { t } = useTranslation();
+  const hero = t.hero;
   return (
     <section
       id="home"
@@ -31,12 +33,12 @@ export function Hero() {
         <Reveal direction="down" delay={0.05} duration={500}>
           <div className="animate-hero-badge w-[245px] h-[28px] inline-flex items-center justify-between p-[2px] pr-3 bg-[#111111] rounded-full shadow-sm mb-6 select-none relative overflow-hidden group">
             <span className="relative overflow-hidden bg-[#E4F86E] text-[#111111] text-[12px] font-semibold px-2.5 rounded-full h-[24px] flex items-center">
-              {HERO_CONTENT.trustedBadge.highlight}
+              {hero.trustedBadge.highlight}
               {/* One-time lime shimmer across Trusted */}
               <span className="absolute inset-0 -translate-x-full animate-[shimmer_2.5s_ease-out_1_1s] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
             </span>
             <span className="text-white text-[13px] font-normal tracking-tight">
-              {HERO_CONTENT.trustedBadge.text}
+              {hero.trustedBadge.text}
             </span>
           </div>
         </Reveal>
@@ -47,14 +49,14 @@ export function Hero() {
           delay={0.12}
           className="animate-hero-h1 text-[48px] sm:text-[58px] md:text-[66px] lg:text-[70px] font-medium leading-[1.08] tracking-[-0.03em] text-[#111111] max-w-[960px]"
         >
-          <span>{HERO_CONTENT.titleLine1}</span>
-          <span>{HERO_CONTENT.titleLine2}</span>
+          <span>{hero.titleLine1}</span>
+          <span>{hero.titleLine2}</span>
         </SplitReveal>
 
         {/* Subtitle: line 1 ~456px */}
         <Reveal direction="up" delay={0.25} duration={600}>
           <p className="animate-hero-sub mt-5 text-[16px] sm:text-[17px] leading-[1.55] text-[#444444] max-w-[460px]">
-            {HERO_CONTENT.subtitle}
+            {hero.subtitle}
           </p>
         </Reveal>
 
@@ -63,7 +65,7 @@ export function Hero() {
           <div className="animate-hero-cta mt-7">
             <Magnetic maxPull={8}>
               <Button href="#contact" variant="primary" className="w-[190px] justify-between">
-                {HERO_CONTENT.ctaText}
+                {hero.ctaText}
               </Button>
             </Magnetic>
           </div>

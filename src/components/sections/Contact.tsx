@@ -3,11 +3,27 @@
 import React, { useState } from "react";
 import { ExternalLink, ChevronDown, CheckCircle2, Navigation, Compass, Layers } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { CONTACT_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 
-function FairfaxMapGraphic() {
+function FairfaxMapGraphic({
+  location = {
+    name: "Solaris Energy HQ",
+    address: "4020 University Dr, Fairfax, VA 22030",
+    rating: "4.9",
+    reviewsCount: "54",
+    mapUrl: "https://maps.google.com/?q=4020+University+Dr,+Fairfax,+VA+22030",
+  },
+}: {
+  location?: {
+    name: string;
+    address: string;
+    rating: string;
+    reviewsCount: string;
+    mapUrl: string;
+  };
+}) {
   return (
     <div className="relative w-full h-full min-h-[380px] lg:min-h-[520px] bg-[#F1EFE8] overflow-hidden select-none">
       {/* SVG Vector Map of Fairfax VA */}
@@ -212,16 +228,16 @@ function FairfaxMapGraphic() {
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-[#E4F86E] ring-4 ring-[#E4F86E]/40" />
               <h4 className="font-semibold text-[15px] text-[#111111] leading-tight">
-                {CONTACT_CONTENT.location.name}
+                {location.name}
               </h4>
             </div>
             <p className="text-[12px] text-[#666666] mt-1.5 leading-snug">
-              {CONTACT_CONTENT.location.address}
+              {location.address}
             </p>
           </div>
           <div className="flex items-center gap-1">
             <a
-              href={CONTACT_CONTENT.location.mapUrl}
+              href={location.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 rounded-lg bg-[#F4F4F5] hover:bg-[#E4F86E] transition-colors text-[#111111] shrink-0"
@@ -231,7 +247,7 @@ function FairfaxMapGraphic() {
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
             <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONTACT_CONTENT.location.address)}`}
+              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location.address)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 rounded-lg bg-[#111111] hover:bg-[#E4F86E] hover:text-[#111111] transition-colors text-white shrink-0"
@@ -244,11 +260,11 @@ function FairfaxMapGraphic() {
         </div>
         <div className="mt-3 pt-2.5 border-t border-black/[0.06] flex items-center justify-between text-[12px]">
           <div className="flex items-center gap-1">
-            <span className="font-bold text-[#111111]">{CONTACT_CONTENT.location.rating}</span>
+            <span className="font-bold text-[#111111]">{location.rating}</span>
             <div className="flex text-amber-400 text-[11px]" aria-label="5 stars">
               ★★★★★
             </div>
-            <span className="text-[#888888]">({CONTACT_CONTENT.location.reviewsCount})</span>
+            <span className="text-[#888888]">({location.reviewsCount})</span>
           </div>
           <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
             Open Now
@@ -259,7 +275,7 @@ function FairfaxMapGraphic() {
       {/* Map Controls (Bottom Right - Zoom / Compass) */}
       <div className="absolute bottom-4 right-4 z-20 flex flex-col gap-1.5 pointer-events-auto">
         <a
-          href={CONTACT_CONTENT.location.mapUrl}
+          href={location.mapUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="w-8 h-8 rounded-lg bg-white/95 backdrop-blur-sm shadow-sm border border-black/5 flex items-center justify-center text-[#555555] hover:text-black hover:bg-[#E4F86E] transition-colors"
@@ -269,7 +285,7 @@ function FairfaxMapGraphic() {
           <Layers className="w-4 h-4" />
         </a>
         <a
-          href={CONTACT_CONTENT.location.mapUrl}
+          href={location.mapUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="w-8 h-8 rounded-lg bg-white/95 backdrop-blur-sm shadow-sm border border-black/5 flex items-center justify-center text-[#555555] hover:text-black hover:bg-[#E4F86E] transition-colors"
@@ -295,6 +311,8 @@ function FairfaxMapGraphic() {
 }
 
 export function Contact() {
+  const { t, language } = useTranslation();
+  const contactData = t.contact;
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -331,7 +349,7 @@ export function Contact() {
       {/* Section Header */}
       <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-10 md:mb-14">
         <Reveal direction="up" distance={12} duration={400}>
-          <Eyebrow>{CONTACT_CONTENT.eyebrow}</Eyebrow>
+          <Eyebrow>{contactData.eyebrow}</Eyebrow>
         </Reveal>
 
         <SplitReveal
@@ -339,12 +357,12 @@ export function Contact() {
           delay={0.1}
           className="text-[34px] sm:text-[42px] md:text-[48px] font-medium leading-[1.12] tracking-[-0.03em] text-[#111111] mt-3.5 mb-4"
         >
-          <span>{CONTACT_CONTENT.titleLine1} {CONTACT_CONTENT.titleLine2}</span>
+          <span>{contactData.titleLine1} {contactData.titleLine2}</span>
         </SplitReveal>
 
         <Reveal direction="up" delay={0.2} distance={16} duration={500}>
           <p className="text-[16px] sm:text-[17px] leading-[1.55] text-[#555555] max-w-[620px]">
-            {CONTACT_CONTENT.subtitle}
+            {contactData.subtitle}
           </p>
         </Reveal>
       </div>
@@ -354,7 +372,7 @@ export function Contact() {
         <div className="w-full bg-white rounded-[28px] sm:rounded-[32px] border border-[#E5E7EB] p-4 sm:p-6 lg:p-7 shadow-[0_4px_30px_rgba(0,0,0,0.04)] grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {/* Left Column: Map Graphic */}
           <div className="relative w-full h-[380px] sm:h-[440px] lg:h-full min-h-[380px] lg:min-h-[520px] rounded-[20px] sm:rounded-[24px] overflow-hidden border border-[#E5E7EB]">
-            <FairfaxMapGraphic />
+            <FairfaxMapGraphic location={contactData.location} />
           </div>
 
           {/* Right Column: Contact Form */}
@@ -365,17 +383,17 @@ export function Contact() {
                   <CheckCircle2 className="w-8 h-8 text-[#111111]" />
                 </div>
                 <h3 className="text-[22px] sm:text-[24px] font-medium text-[#111111]">
-                  Consultation Request Received!
+                  {contactData.form.successTitle}
                 </h3>
                 <p className="text-[15px] text-[#555555] mt-2 max-w-[420px] leading-relaxed">
-                  Thank you, <strong className="text-[#111111]">{formData.name}</strong>. Our solar engineering team in Fairfax, VA will review your details and contact you within 24 hours.
+                  {contactData.form.successText.replace("{name}", formData.name || "")}
                 </p>
                 <button
                   type="button"
                   onClick={handleReset}
                   className="mt-6 px-6 py-2.5 rounded-xl bg-[#F4F4F5] hover:bg-[#111111] hover:text-white text-[#111111] font-medium text-[14px] transition-all cursor-pointer"
                 >
-                  Send another inquiry
+                  {contactData.form.sendAnother}
                 </button>
               </div>
             ) : (
@@ -383,7 +401,7 @@ export function Contact() {
                 {/* Name */}
                 <div>
                   <label htmlFor="contact-name" className="block text-[13px] font-medium text-[#222222] mb-1.5">
-                    Name
+                    {contactData.form.nameLabel}
                   </label>
                   <input
                     id="contact-name"
@@ -391,7 +409,7 @@ export function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="John Carter"
+                    placeholder={contactData.form.namePlaceholder}
                     className="w-full px-4 py-3 rounded-xl bg-[#F8F9FA] border border-[#E9ECEF] text-[#111111] placeholder:text-[#999999] text-[15px] focus:outline-none focus:ring-2 focus:ring-[#E4F86E] focus:border-black/30 focus:bg-white transition-all"
                   />
                 </div>
@@ -399,14 +417,14 @@ export function Contact() {
                 {/* Phone Number */}
                 <div>
                   <label htmlFor="contact-phone" className="block text-[13px] font-medium text-[#222222] mb-1.5">
-                    Phone Number
+                    {contactData.form.phoneLabel}
                   </label>
                   <input
                     id="contact-phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+1 (994) 717-1255"
+                    placeholder={contactData.form.phonePlaceholder}
                     className="w-full px-4 py-3 rounded-xl bg-[#F8F9FA] border border-[#E9ECEF] text-[#111111] placeholder:text-[#999999] text-[15px] focus:outline-none focus:ring-2 focus:ring-[#E4F86E] focus:border-black/30 focus:bg-white transition-all"
                   />
                 </div>
@@ -414,7 +432,7 @@ export function Contact() {
                 {/* Email */}
                 <div>
                   <label htmlFor="contact-email" className="block text-[13px] font-medium text-[#222222] mb-1.5">
-                    Email
+                    {contactData.form.emailLabel}
                   </label>
                   <input
                     id="contact-email"
@@ -422,7 +440,7 @@ export function Contact() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="jane@example.com"
+                    placeholder={contactData.form.emailPlaceholder}
                     className="w-full px-4 py-3 rounded-xl bg-[#F8F9FA] border border-[#E9ECEF] text-[#111111] placeholder:text-[#999999] text-[15px] focus:outline-none focus:ring-2 focus:ring-[#E4F86E] focus:border-black/30 focus:bg-white transition-all"
                   />
                 </div>
@@ -430,7 +448,7 @@ export function Contact() {
                 {/* Solar Solution (Select Dropdown) */}
                 <div>
                   <label htmlFor="contact-service" className="block text-[13px] font-medium text-[#222222] mb-1.5">
-                    Solar Solution
+                    {contactData.form.serviceLabel}
                   </label>
                   <div className="relative">
                     <select
@@ -440,9 +458,9 @@ export function Contact() {
                       className="w-full px-4 py-3 pr-10 rounded-xl bg-[#F8F9FA] border border-[#E9ECEF] text-[#111111] text-[15px] focus:outline-none focus:ring-2 focus:ring-[#E4F86E] focus:border-black/30 focus:bg-white transition-all appearance-none cursor-pointer"
                     >
                       <option value="" disabled>
-                        Select a solution...
+                        {contactData.form.servicePlaceholder}
                       </option>
-                      {CONTACT_CONTENT.form.services.map((srv) => (
+                      {contactData.form.services.map((srv) => (
                         <option key={srv} value={srv}>
                           {srv}
                         </option>
@@ -455,14 +473,14 @@ export function Contact() {
                 {/* Message */}
                 <div>
                   <label htmlFor="contact-message" className="block text-[13px] font-medium text-[#222222] mb-1.5">
-                    Message
+                    {language === "az" ? "Əlavə qeydlər" : "Дополнительные пожелания"}
                   </label>
                   <textarea
                     id="contact-message"
                     rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us about your home, current electricity bill, or any questions..."
+                    placeholder={language === "az" ? "Eviniz, cari elektrik xərciniz və ya suallarınız haqqında yazın..." : "Расскажите о вашем объекте, примерных расходах или вопросах..."}
                     className="w-full px-4 py-3 rounded-xl bg-[#F8F9FA] border border-[#E9ECEF] text-[#111111] placeholder:text-[#999999] text-[15px] focus:outline-none focus:ring-2 focus:ring-[#E4F86E] focus:border-black/30 focus:bg-white transition-all resize-none"
                   />
                 </div>
@@ -476,10 +494,10 @@ export function Contact() {
                   {loading ? (
                     <span className="inline-flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Submitting...
+                      {contactData.form.submitting}
                     </span>
                   ) : (
-                    <span>Submit</span>
+                    <span>{contactData.form.submitBtn}</span>
                   )}
                 </button>
               </form>

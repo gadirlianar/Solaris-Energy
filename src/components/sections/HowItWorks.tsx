@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { HOW_IT_WORKS_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 
 export function HowItWorks() {
+  const { t } = useTranslation();
+  const howItWorks = t.howItWorks;
   const reduced = useReducedMotion();
   const [activeStep, setActiveStep] = useState<number>(0);
   const [progressHeight, setProgressHeight] = useState<number>(25);
@@ -41,7 +43,7 @@ export function HowItWorks() {
       setActiveStep(closestIdx);
 
       // Progress bar fill percentage: (activeStep + 1) / total
-      const totalSteps = HOW_IT_WORKS_CONTENT.steps.length;
+      const totalSteps = howItWorks.steps.length;
       const progress = ((closestIdx + 1) / totalSteps) * 100;
       setProgressHeight(progress);
 
@@ -59,7 +61,7 @@ export function HowItWorks() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [reduced]);
+  }, [reduced, howItWorks.steps.length]);
 
   return (
     <section id="how-it-works" className="w-full max-w-[1288px] mx-auto px-4 sm:px-6 md:px-9 pt-[120px] pb-[106px]">
@@ -67,7 +69,7 @@ export function HowItWorks() {
         {/* Left Column (Sticky on desktop) */}
         <div className="lg:col-span-6 lg:sticky lg:top-32 self-start pr-0 lg:pr-6">
           <Reveal direction="left" distance={16} duration={400}>
-            <Eyebrow>{HOW_IT_WORKS_CONTENT.eyebrow}</Eyebrow>
+            <Eyebrow>{howItWorks.eyebrow}</Eyebrow>
           </Reveal>
 
           <SplitReveal
@@ -75,13 +77,13 @@ export function HowItWorks() {
             delay={0.1}
             className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111] mt-3.5 mb-5"
           >
-            <span>{HOW_IT_WORKS_CONTENT.titleLine1}</span>
-            <span>{HOW_IT_WORKS_CONTENT.titleLine2}</span>
+            <span>{howItWorks.titleLine1}</span>
+            <span>{howItWorks.titleLine2}</span>
           </SplitReveal>
 
           <Reveal direction="up" delay={0.2} distance={20} duration={600}>
             <p className="text-[16px] sm:text-[17px] leading-[1.55] text-[#555555] max-w-[500px]">
-              {HOW_IT_WORKS_CONTENT.subtitle}
+              {howItWorks.subtitle}
             </p>
           </Reveal>
         </div>
@@ -102,7 +104,7 @@ export function HowItWorks() {
               </div>
             )}
 
-            {HOW_IT_WORKS_CONTENT.steps.map((step, idx) => {
+            {howItWorks.steps.map((step, idx) => {
               const isActive = activeStep === idx;
               return (
                 <div

@@ -5,13 +5,15 @@ import { motion, AnimatePresence } from "motion/react";
 import { Plus } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
-import { FAQ_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 
 export function Faq() {
+  const { t } = useTranslation();
+  const faqData = t.faq;
   const [openId, setOpenId] = useState<number | null>(null);
   const reduced = useReducedMotion();
 
@@ -26,7 +28,7 @@ export function Faq() {
         <div className="lg:col-span-5 flex flex-col justify-between">
           <div>
             <Reveal direction="left" distance={16} duration={400}>
-              <Eyebrow>{FAQ_CONTENT.eyebrow}</Eyebrow>
+              <Eyebrow>{faqData.eyebrow}</Eyebrow>
             </Reveal>
 
             <SplitReveal
@@ -34,12 +36,12 @@ export function Faq() {
               delay={0.1}
               className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111] mt-3.5 mb-5"
             >
-              {FAQ_CONTENT.title}
+              {faqData.title}
             </SplitReveal>
 
             <Reveal direction="up" delay={0.2} distance={20} duration={600}>
               <p className="text-[16px] sm:text-[17px] leading-[1.55] text-[#555555] max-w-[420px]">
-                {FAQ_CONTENT.subtitle}
+                {faqData.subtitle}
               </p>
             </Reveal>
           </div>
@@ -52,16 +54,16 @@ export function Faq() {
               }`}
             >
               <h3 className="text-[21px] sm:text-[22px] font-medium tracking-tight text-[#111111] mb-2.5">
-                {FAQ_CONTENT.helpCard.title}
+                {faqData.helpCard.title}
               </h3>
 
               <p className="text-[15px] sm:text-[15.5px] leading-relaxed text-[#555555] mb-6">
-                {FAQ_CONTENT.helpCard.text}
+                {faqData.helpCard.text}
               </p>
 
               <Magnetic maxPull={8}>
                 <Button href="#contact" variant="primary">
-                  {FAQ_CONTENT.helpCard.buttonText}
+                  {faqData.helpCard.buttonText}
                 </Button>
               </Magnetic>
             </div>
@@ -70,7 +72,7 @@ export function Faq() {
 
         {/* Right Column: Gray Panel with 6 Accordion Rows */}
         <div className="lg:col-span-7 w-full bg-[#F2F2F2] rounded-[28px] p-2.5 flex flex-col gap-2.5">
-          {FAQ_CONTENT.faqs.map((faq, idx) => {
+          {faqData.faqs.map((faq, idx) => {
             const isOpen = openId === faq.id;
             return (
               <Reveal

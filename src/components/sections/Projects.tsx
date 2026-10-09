@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PROJECTS_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { useInView } from "@/components/motion/useInView";
@@ -97,14 +97,16 @@ function BentoProjectCard({
 }
 
 export function Projects() {
-  const [p1, p2, p3, p4] = PROJECTS_CONTENT.projects;
+  const { t } = useTranslation();
+  const projects = t.projects;
+  const [p1, p2, p3, p4] = projects.projects;
 
   return (
     <section id="projects" className="w-full max-w-[1288px] mx-auto px-4 sm:px-6 md:px-9 pt-[60px] pb-[53px]">
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-12 md:mb-16">
         <Reveal direction="left" distance={16} duration={400}>
-          <Eyebrow>{PROJECTS_CONTENT.eyebrow}</Eyebrow>
+          <Eyebrow>{projects.eyebrow}</Eyebrow>
         </Reveal>
 
         <SplitReveal
@@ -112,12 +114,12 @@ export function Projects() {
           delay={0.1}
           className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111] mt-3.5 mb-4"
         >
-          {PROJECTS_CONTENT.title}
+          {projects.title}
         </SplitReveal>
 
         <Reveal direction="up" delay={0.2} distance={20} duration={600}>
           <p className="text-[16px] sm:text-[17px] leading-[1.5] text-[#555555]">
-            {PROJECTS_CONTENT.subtitle}
+            {projects.subtitle}
           </p>
         </Reveal>
       </div>

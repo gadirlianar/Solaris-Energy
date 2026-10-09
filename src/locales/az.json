@@ -1,0 +1,430 @@
+{
+  "nav": {
+    "home": "Ana Səhifə",
+    "about": "Haqqımızda",
+    "solutions": "Həllər",
+    "projects": "Layihələr",
+    "faq": "FAQ",
+    "contact": "Əlaqə",
+    "consultationBtn": "Məsləhət Alın",
+    "quickCalcBtn": "Hesabla",
+    "langAria": "Dili dəyişdir",
+    "menuAria": "Naviqasiya menyusunu aç/bağla"
+  },
+  "hero": {
+    "trustedBadge": {
+      "highlight": "Etibarlı",
+      "text": "500+ ev sahibi tərəfindən"
+    },
+    "titleLine1": "Dünyanı irəliyə aparan",
+    "titleLine2": "günəş enerjisi",
+    "subtitle": "Evləri və biznesləri təmiz, bərpa olunan günəş həlləri ilə təmin edirik. Karbon izinizi və enerji xərclərinizi bu gündən azaldın.",
+    "ctaText": "Məsləhət Alın",
+    "calcText": "Qənaəti Hesabla"
+  },
+  "about": {
+    "eyebrow": "Haqqımızda",
+    "titleLine1": "Müasir Evlər Üçün",
+    "titleLine2": "Ağıllı Günəş Həlləri",
+    "paragraph": "Ev sahiblərinə elektrik enerjisi xərclərini azaltmağa və təmiz enerjiyə keçməyə kömək edən yüksək səmərəli günəş sistemləri layihələndirir və quraşdırırıq.",
+    "buttonText": "Günəş Həllərini Kəşf Edin",
+    "slides": [
+      {
+        "id": 1,
+        "image": "/images/about-slide-1.jpg",
+        "date": "10/04/2026",
+        "title": "Fərdi Evlərdə Günəş Quraşdırılması",
+        "caption": "Evləri gündəlik təmiz və bərpa olunan enerji ilə təmin etmək üçün damda səmərəli panellərin quraşdırılması."
+      },
+      {
+        "id": 2,
+        "image": "/images/about-slider-2.jpg",
+        "date": "12/04/2026",
+        "title": "Kommersiya Günəş Massivi",
+        "caption": "Maksimum səmərəlilik və sənaye dayanıqlığı üçün hazırlanmış yüksək güclü kommersiya dam sistemləri."
+      },
+      {
+        "id": 3,
+        "image": "/images/about-slider-3.jpg",
+        "date": "15/04/2026",
+        "title": "Ağıllı İnverter və Batareya Saxlama",
+        "caption": "Fasiləsiz ehtiyat enerji təmin edən və xərcləri optimallaşdıran intellektual ev saxlama sistemləri."
+      },
+      {
+        "id": 4,
+        "image": "/images/about-slider-4.jpg",
+        "date": "18/04/2026",
+        "title": "Sertifikatlı Texniki Təftiş",
+        "caption": "Hər panel bağlantısında ciddi keyfiyyət yoxlanışı, gərginlik diaqnostikası və təhlükəsizlik sınaqları."
+      },
+      {
+        "id": 5,
+        "image": "/images/about-slider-5.jpg",
+        "date": "22/04/2026",
+        "title": "Dayanıqlı Memarlıq İnteqrasiyası",
+        "caption": "Müasir memarlıq dizaynı ilə mükəmməl uyğunlaşan estetik günəş dam örtükləri."
+      }
+    ],
+    "stats": [
+      {
+        "targetNumber": 10,
+        "suffix": "+",
+        "startText": "0+",
+        "label": "Günəş Sənayesində Təcrübə",
+        "description": "Fərdi və kommersiya layihələrində illərin peşəkar təcrübəsi ilə etibarlı günəş enerjisi həlləri təqdim edirik.",
+        "icon": "shield-check"
+      },
+      {
+        "targetNumber": 500,
+        "suffix": "+",
+        "startText": "0+",
+        "label": "Quraşdırılmış Günəş Layihələri",
+        "description": "Evləri və müəssisələri təmiz bərpa olunan enerji ilə təchiz edən uğurla tamamlanmış günəş layihələri.",
+        "icon": "wrench"
+      },
+      {
+        "targetNumber": 25,
+        "suffix": " İl",
+        "startText": "0 İl",
+        "label": "Panellərə Performans Zəmanəti",
+        "description": "Uzunmüddətli səmərəli işləmə və davamlı enerji istehsalı üçün nəzərdə tutulmuş yüksək keyfiyyətli panellər.",
+        "icon": "circle-check"
+      }
+    ]
+  },
+  "solutions": {
+    "eyebrow": "Günəş Həllərimiz",
+    "titleLine1": "Evlər və Bizneslər Üçün Nəzərdə",
+    "titleLine2": "Tutulmuş Ağıllı Günəş Həlləri",
+    "subtitle": "Evləri və müəssisələri səmərəli şəkildə enerji ilə təmin etmək üçün yaradılmış ağıllı günəş həlləri.",
+    "cards": [
+      {
+        "id": "home-install",
+        "icon": "sun",
+        "title": "Fərdi Evlərdə Quraşdırma",
+        "description": "Maksimum enerji hasilatı üçün xüsusi olaraq layihələndirilmiş fərdi dam günəş sistemləri.",
+        "illustrationType": "home-install"
+      },
+      {
+        "id": "cost-savings",
+        "icon": "banknote",
+        "title": "Xərclərə Qənaət",
+        "description": "Günəş panelləri və ağıllı batareyalarla elektrik xərclərində 70%-dək qənaət əldə edin.",
+        "illustrationType": "cost-savings"
+      },
+      {
+        "id": "smart-monitoring",
+        "icon": "presentation",
+        "title": "Ağıllı Monitorinq",
+        "description": "Ağıllı monitorinq və süni intellekt optimallaşdırması sisteminizin 7/24 işləməsini təmin edir.",
+        "illustrationType": "smart-monitoring"
+      },
+      {
+        "id": "quick-install",
+        "icon": "wrench",
+        "title": "Sürətli Quraşdırma",
+        "description": "Sertifikatlaşdırılmış peşəkar texniklər tərəfindən sürətli və təhlükəsiz quraşdırma.",
+        "illustrationType": "quick-install"
+      },
+      {
+        "id": "sustainability",
+        "icon": "leaf",
+        "title": "Ekoloji Dayanıqlılıq",
+        "description": "Daha təmiz, yaşıl və dayanıqlı gələcək üçün təmiz bərpa olunan enerji.",
+        "illustrationType": "sustainability"
+      },
+      {
+        "id": "energy-efficiency",
+        "icon": "gauge",
+        "title": "Enerji Səmərəliliyi",
+        "description": "Ağıllı günəş sistemləri ilə evinizin enerji istehlakını ən optimal şəkildə idarə edin.",
+        "illustrationType": "energy-efficiency"
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "Necə İşləyir",
+    "titleLine1": "Məsləhətdən Təmiz Enerjiyə:",
+    "titleLine2": "4 Sadə Addım",
+    "subtitle": "Günəş enerjisinə keçidi sadələşdiririk. Təkmilləşdirilmiş prosesimiz ən uyğun həlli tez bir zamanda əldə etməyinizi təmin edir.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Məkanın Qiymətləndirilməsi",
+        "items": [
+          "Onlayn və ya yerində sahə qiymətləndirilməsi",
+          "Fərdiləşdirilmiş günəş sistemi dizaynı",
+          "Detallı enerji qənaəti təhlili"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Fərdi Təklifin Hazırlanması",
+        "items": [
+          "Sistem parametrləri və şəffaf qiymətləndirmə",
+          "Çevik maliyyələşdirmə seçimlərinin izahı",
+          "Bütün icazə və sənədləşmə işlərinin həlli"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Peşəkar Quraşdırma",
+        "items": [
+          "Sertifikatlı günəş enerjisi mütəxəssisləri",
+          "Sürətli və tam təhlükəsiz quraşdırma",
+          "Keyfiyyət və təhlükəsizlik təftişi daxildir"
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Sistemin İşə Salınması",
+        "items": [
+          "Şəbəkəyə qoşulma və yekun sınaq",
+          "Monitorinq sisteminin sazlanması",
+          "Təmiz günəş enerjisi hasilatına başlama"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Günəş Layihələri",
+    "title": "Son Quraşdırma Layihələrimiz",
+    "subtitle": "Ən son fərdi və kommersiya günəş layihələrimizlə tanış olun.",
+    "projects": [
+      {
+        "id": "residential-rooftop",
+        "title": "Fərdi Yaşayış Evi Günəş Sistemi",
+        "description": "Müasir ailə evi üçün elektrik xərclərini azaltmaq və təmiz enerji hasil etmək məqsədilə quraşdırılmış 10 kVt gücündə dam sistemi.",
+        "image": "/images/project-1.jpg",
+        "isWide": false
+      },
+      {
+        "id": "commercial-solar",
+        "title": "Kommersiya Günəş Qurğusu",
+        "description": "Gündəlik fəaliyyəti təmin etmək və enerji xərclərini əhəmiyyətli dərəcədə azaltmaq üçün ticarət obyektində quraşdırılmış 40 kVt günəş sistemi.",
+        "image": "/images/project-2.jpg",
+        "isWide": true
+      },
+      {
+        "id": "home-panel-setup",
+        "title": "Ağıllı Ev Panellərinin Quraşdırılması",
+        "description": "Optimallaşdırılmış enerji istehsalı üçün ağıllı inverter texnologiyası ilə quraşdırılmış yüksək səmərəli dam panelləri.",
+        "image": "/images/project-3.jpg",
+        "isWide": true
+      },
+      {
+        "id": "system-inspection",
+        "title": "Günəş Sisteminin Diaqnostikası",
+        "description": "Maksimum panel performansını və uzunmüddətli enerji qənaətini təmin etmək üçün planlı texniki baxış və servis.",
+        "image": "/images/project-4.jpg",
+        "isWide": false
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Günəşin Üstünlükləri",
+    "titleLine1": "Günəş Enerjisi Niyə Ağıllı",
+    "titleLine2": "Uzunmüddətli İnvestisiyadır",
+    "subtitle": "Suallarınızı cavablandırmaq və sizə dəstək olmaq üçün hər zaman hazırıq.",
+    "items": [
+      {
+        "id": "bills",
+        "icon": "gauge",
+        "title": "Aşağı Elektrik Qəbzləri",
+        "description": "Öz günəş enerjinizi istehsal edin və aylıq elektrik xərclərinizi azaldın."
+      },
+      {
+        "id": "independence",
+        "icon": "shield-check",
+        "title": "Enerji Müstəqilliyi",
+        "description": "Öz təmiz enerjinizi hasil edin, mərkəzi şəbəkədən və artan tariflərdən daha az asılı olun."
+      },
+      {
+        "id": "property",
+        "icon": "trending-up",
+        "title": "Daşınmaz Əmlakın Dəyər Artımı",
+        "description": "Günəş sistemi quraşdırılmış evlər alıcılar üçün daha cəlbedicidir və daha yüksək qiymətə satılır."
+      },
+      {
+        "id": "eco",
+        "icon": "leaf",
+        "title": "Ekoloji Təsir",
+        "description": "Hər gün təmiz və bərpa olunan enerji istifadə edərək karbon izinizi azaldın."
+      },
+      {
+        "id": "incentives",
+        "icon": "circle-check",
+        "title": "Dövlət Dəstəyi və İmtiazlar",
+        "description": "İlkin xərcləri azaldan vergi güzəştləri, subsidiyalar və xüsusi maliyyə proqramlarından yararlanın."
+      },
+      {
+        "id": "long-term",
+        "icon": "wrench",
+        "title": "Uzunmüddətli Qənaət",
+        "description": "Davamlı və etibarlı sistemlə enerji xərclərinizi onilliklər boyu sabit saxlayın və qənaət edin."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Müştəri Rəyləri",
+    "titleLine1": "Dayanıqlı Həyat Üçün",
+    "titleLine2": "Etibarlı Günəş Həlləri",
+    "subtitle": "Suallarınızı cavablandırmaq və sizə dəstək olmaq üçün buradayıq.",
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Mədinə Xanayeva",
+        "quote": "Məsləhətdən quraşdırmaya qədər əla təcrübə. Komanda çox savadlı və olduqca operativ idi.",
+        "image": "/images/testimonial-1.jpg",
+        "stars": 5
+      },
+      {
+        "id": 2,
+        "name": "James Walker",
+        "quote": "Aydın istiqamətləndirmə və başdan sona qədər yüksək səviyyəli müştəri xidməti ilə etibarlı günəş quraşdırması.",
+        "image": "/images/testimonial-2.jpg",
+        "stars": 5
+      },
+      {
+        "id": 3,
+        "name": "Anar Qədirli",
+        "quote": "Bu komanda ilə günəş enerjisinə keçid çox rahat oldu. Elektrik xərclərimiz ilk aydan xeyli dərəcədə azaldı.",
+        "image": "/images/testimonial-3.jpg",
+        "stars": 5
+      },
+      {
+        "id": 4,
+        "name": "Michael Brooks",
+        "quote": "Bütün proses boyu peşəkar quraşdırma və mükəmməl dəstək. Onların günəş həllərini qətiyyətlə tövsiyə edirəm.",
+        "image": "/images/testimonial-4.jpg",
+        "stars": 5
+      },
+      {
+        "id": 5,
+        "name": "Emily Parker",
+        "quote": "Günəş sistemi qüsursuz işləyir və monitorinq alətləri hər gün enerji istehsalımızı asanlıqla izləməyə kömək edir.",
+        "image": "/images/testimonial-5.jpg",
+        "stars": 5
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Tez-tez Verilən Suallar",
+    "title": "Suallarınıza Cavablar",
+    "subtitle": "Solaris Energy haqqında suallarınız var? Sizə kömək etmək üçün ən çox verilən sualları topladıq.",
+    "helpCard": {
+      "title": "Daha Çox Köməyə Ehtiyacınız Var?",
+      "text": "Günəş quraşdırılması, qiymətlər və ya texniki qulluq haqqında sualınız var? Mütəxəssislərimiz kömək etməyə hazırdır.",
+      "buttonText": "Bizimlə Əlaqə"
+    },
+    "faqs": [
+      {
+        "id": 1,
+        "question": "Hansı günəş enerjisi xidmətlərini təklif edirsiniz?",
+        "answer": "Tam dövriyyəli həllər təqdim edirik: sahənin qiymətləndirilməsi, fərdi sistem layihələndirilməsi, sənədləşmə, peşəkar quraşdırma, ağıllı monitorinq və fərdi evlər ilə müəssisələr üçün davamlı texniki qulluq."
+      },
+      {
+        "id": 2,
+        "question": "Günəş panelləri ilə nə qədər qənaət edə bilərəm?",
+        "answer": "Müştərilərin əksəriyyəti sistemin ölçüsündən, damın oriyentasiyasından və yerli tariflərdən asılı olaraq elektrik xərclərini 50-70% azaldır. Konsultasiya zamanı sizə detallı qənaət hesablaması təqdim olunur."
+      },
+      {
+        "id": 3,
+        "question": "Günəş panellərinin quraşdırılması nə qədər vaxt aparır?",
+        "answer": "Fərdi yaşayış evlərində yerində quraşdırma adətən 1-3 gün çəkir. İlk məsləhətdən şəbəkəyə qoşulmaya qədər bütün proses sənədləşmə və rəsmi icazələr daxil olmaqla 4-8 həftə çəkir."
+      },
+      {
+        "id": 4,
+        "question": "Buludlu havada günəş panelləri işləyirmi?",
+        "answer": "Bəli. Panellər buludlu günlərdə də daha az güclə elektrik enerjisi hasil edir. Müasir yüksək səmərəli panellər səpələnmiş işığı tutur, batareyalar və şəbəkə balansı isə ehtiyacı qarşılayır."
+      },
+      {
+        "id": 5,
+        "question": "Günəş panellərinin istismar müddəti nə qədərdir?",
+        "answer": "Keyfiyyətli günəş panelləri 25-30+ il xidmət edir və 25 illik performans zəmanəti ilə təmin olunur, hər il yalnız cüzi miqdarda amortizasiyaya uğrayır."
+      },
+      {
+        "id": 6,
+        "question": "Sistemə texniki qulluq və dəstək göstərirsinizmi?",
+        "answer": "Bəli. Sistemin hər zaman ən yüksək məhsuldarlıqla işləməsi üçün 7/24 onlayn monitorinq, planlı yoxlamalar, təmizlik və operativ təmir dəstəyi göstəririk."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Əlaqə",
+    "titleLine1": "Günəş Enerjisi Ehtiyaclarınızı",
+    "titleLine2": "Birlikdə Müzakirə Edək",
+    "subtitle": "Konsultasiya, suallar və ya dəstək üçün bizimlə əlaqə saxlayın — komandamız hər addımda sizə bələdçilik etməyə hazırdır.",
+    "form": {
+      "nameLabel": "Ad və Soyad",
+      "namePlaceholder": "Məs: Elvin Məmmədov",
+      "phoneLabel": "Əlaqə Nömrəsi",
+      "phonePlaceholder": "+994 (50) 123-45-67",
+      "emailLabel": "E-poçt Ünvanı",
+      "emailPlaceholder": "ad@example.com",
+      "serviceLabel": "Günəş Enerjisi Xidməti",
+      "servicePlaceholder": "Xidmət növünü seçin...",
+      "services": [
+        "Fərdi Yaşayış Evində Günəş Sistemi",
+        "Kommersiya Günəş Sistemləri",
+        "Batareya və Ehtiyat Enerji Saxlama",
+        "Sistemin Texniki Baxışı və Qulluq",
+        "Pulsuz Enerji Auditi və Məsləhət"
+      ],
+      "submitBtn": "Məsləhət İstəyi Göndər",
+      "submitting": "Göndərilir...",
+      "successTitle": "Müraciətiniz Qəbul Edildi!",
+      "successText": "Təşəkkür edirik, {name}. Günəş enerjisi mühəndislərimiz məlumatlarınızı nəzərdən keçirəcək və 24 saat ərzində sizinlə əlaqə saxlayacaqlar.",
+      "sendAnother": "Yeni müraciət göndər"
+    },
+    "location": {
+      "name": "Solaris Energy HQ",
+      "address": "4020 University Dr, Fairfax, VA 22030",
+      "rating": "4.9",
+      "reviewsCount": "54",
+      "mapUrl": "https://maps.google.com/?q=4020+University+Dr,+Fairfax,+VA+22030"
+    }
+  },
+  "ctaFooter": {
+    "h2Line1": "Dayanıqlı həyat üçün innovativ",
+    "h2Line2": "günəş enerjisi həlləri",
+    "subtitle": "Evləri və biznesləri təmiz, bərpa olunan günəş həlləri ilə təmin edirik. Karbon izinizi və enerji xərclərinizi bu gündən azaldın.",
+    "ctaButton": "Təklif Alın",
+    "solarFieldImage": "/images/cta-solar-field.jpg",
+    "brandDescription": "Evlərin və bizneslərin elektrik xərclərini azaltmasına kömək edən təmiz bərpa olunan enerji həlləri.",
+    "socials": [
+      { "name": "Twitter", "href": "#", "icon": "x" },
+      { "name": "Facebook", "href": "#", "icon": "facebook" },
+      { "name": "Instagram", "href": "#", "icon": "instagram" }
+    ],
+    "quickLinksTitle": "Sürətli Keçidlər:",
+    "quickLinks": [
+      { "label": "Ana Səhifə", "href": "#home" },
+      { "label": "Haqqımızda", "href": "#about" },
+      { "label": "Həllər", "href": "#solutions" },
+      { "label": "Layihələr", "href": "#projects" },
+      { "label": "Əlaqə", "href": "#contact" }
+    ],
+    "contactTitle": "Əlaqə:",
+    "contactEmail": "projects@solaris.com",
+    "contactPhone": "+1 (994) 717-1255",
+    "contactAddress": "4020 University Dr, Fairfax, VA, USA",
+    "rightsReserved": "Bütün hüquqlar qorunur.",
+    "backToTop": "Yuxarı Qayıt"
+  },
+  "calculator": {
+    "badge": "Ağıllı Alət",
+    "title": "Günəş Enerjisi Qənaət Kalkulyatoru",
+    "subtitle": "Aylıq cari elektrik xərcinizi qeyd edin və dərhal nə qədər qənaət edəcəyinizi hesablayın.",
+    "billLabel": "Aylıq elektrik xərci:",
+    "monthlySavings": "Təxmini aylıq qənaət (~70%)",
+    "yearlySavings": "İllik birbaşa qənaət",
+    "twentyFiveYear": "25 illik ümumi qənaət",
+    "co2Reduction": "İllik azaldılan CO₂",
+    "recommendedPower": "Tövsiyə edilən sistem gücü",
+    "orderCTA": "Bu Parametrlərlə Məsləhət Al",
+    "close": "Bağla",
+    "currency": "AZN",
+    "tons": "ton"
+  }
+}

@@ -10,7 +10,7 @@ import {
   Gauge,
 } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { SOLUTIONS_CONTENT } from "@/data/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
@@ -92,6 +92,8 @@ const illustrationMap: Record<string, { src: string; width: number; height: numb
 };
 
 export function Solutions() {
+  const { t } = useTranslation();
+  const solutions = t.solutions;
   const reduced = useReducedMotion();
 
   return (
@@ -99,7 +101,7 @@ export function Solutions() {
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-12 md:mb-16">
         <Reveal direction="left" distance={16} duration={400}>
-          <Eyebrow>{SOLUTIONS_CONTENT.eyebrow}</Eyebrow>
+          <Eyebrow>{solutions.eyebrow}</Eyebrow>
         </Reveal>
 
         <SplitReveal
@@ -107,13 +109,13 @@ export function Solutions() {
           delay={0.1}
           className="text-[34px] sm:text-[40px] md:text-[44px] font-medium leading-[1.15] tracking-[-0.025em] text-[#111111] mt-3.5 mb-4 max-w-[850px]"
         >
-          <span>{SOLUTIONS_CONTENT.titleLine1}</span>
-          <span>{SOLUTIONS_CONTENT.titleLine2}</span>
+          <span>{solutions.titleLine1}</span>
+          <span>{solutions.titleLine2}</span>
         </SplitReveal>
 
         <Reveal direction="up" delay={0.2} distance={20} duration={600}>
           <p className="text-[16px] sm:text-[17px] leading-[1.5] text-[#555555] max-w-[620px]">
-            {SOLUTIONS_CONTENT.subtitle}
+            {solutions.subtitle}
           </p>
         </Reveal>
       </div>
@@ -121,7 +123,7 @@ export function Solutions() {
       {/* Gray Panel with 3x2 Grid */}
       <div className="w-full bg-[#F2F2F2] rounded-[28px] p-[11px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[11px]">
-          {SOLUTIONS_CONTENT.cards.map((card, idx) => {
+          {solutions.cards.map((card, idx) => {
             const ill = illustrationMap[card.illustrationType] || illustrationMap["home-install"];
             return (
               <Reveal

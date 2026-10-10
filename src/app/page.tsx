@@ -13,21 +13,14 @@ import { CtaFooter } from "@/components/sections/CtaFooter";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { IntroOverlay } from "@/components/motion/IntroOverlay";
-import { BigBossGreeting } from "@/components/motion/BigBossGreeting";
 import { MotionDebug } from "@/components/motion/MotionDebug";
 
 export default function HomePage() {
   return (
     <SmoothScroll>
       <div className="relative min-h-screen bg-white">
-        {/* ========================================================================= */}
-        {/* [MÜVƏQQƏTİ] "BIG BOSS DAN çakma bossa salam" 7 Saniyəlik Giriş Ekranı     */}
-        {/* İstifadəçi istədiyi vaxt silmək üçün sadəcə bu sətri silmək kifayətdir.     */}
-        {/* ========================================================================= */}
-        <BigBossGreeting />
-
-        {/* Normal Solaris Intro animasiyası (BigBoss bitdikdən və ya silindikdən sonra) */}
-        {/* <IntroOverlay /> */}
+        {/* Intro Session Animation */}
+        <IntroOverlay />
 
         {/* Top 2px Lime Scroll Progress Bar */}
         <ScrollProgress />
